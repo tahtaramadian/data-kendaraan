@@ -1,0 +1,37 @@
+<div th:switch="${dataKendaraans}">
+    <h2 th:case="null">No users yet!</h2>
+    <div th:case="*">
+        <h2>Data Kendaraan</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Nomor Registrasi Kendaraan</th>
+                <th>Alamat</th>
+                <th>Bahan Bakar</th>
+                <th>Kapasitas Silinder</th>
+                <th>Merk Kendaraan</th>
+                <th>Nama Pemilik</th>
+                <th>Tahun Pembuatan</th>
+                <th>Warna Kendaraan</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="dataKendaraan : ${dataKendaraans}">
+                <td th:text="${dataKendaraan.nomorRegistrasiKendaraan}"></td>
+                <td th:text="${dataKendaraan.alamat}"></td>
+                <td th:text="${dataKendaraan.bahanBakar}"></td>
+                <td th:text="${dataKendaraan.kapasitasSilinder}"></td>
+                <td th:text="${dataKendaraan.merkKendaraan}"></td>
+                <td th:text="${dataKendaraan.namaPemilik}"></td>
+                <td th:text="${dataKendaraan.tahunPembuatan}"></td>
+                <td th:text="${dataKendaraan.warnaKendaraan}"></td>
+                <td><a th:href="@{/edit/{nomorRegistrasiKendaraan}(nomorRegistrasiKendaraan=${dataKendaraan.nomorRegistrasiKendaraan})}">Edit</a></td>
+                <td><a th:href="@{/delete/{nomorRegistrasiKendaraan}(nomorRegistrasiKendaraan=${dataKendaraan.nomorRegistrasiKendaraan})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/api/signup">Add Data Kendaraan Baru</a></p>
+</div>

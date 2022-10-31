@@ -1,0 +1,31 @@
+<form action="#" th:action="@{/addKendaraan}" th:object="${dataKendaraanDTO}" method="post">
+    <label for="nomorRegistrasiKendaraan">Nomor Registrasi Kendaraan</label>
+    <input type="text" th:field="*{nomorRegistrasiKendaraan}" id="nomorRegistrasiKendaraan"
+           placeholder="Nomor Registrasi Kendaraan">
+    <br>
+    <label for="namaPemilik">Nama Pemilik</label>
+    <input type="text" th:field="*{namaPemilik}" id="namaPemilik" placeholder="Nama Pemilik">
+    <br>
+    <span th:if="${#fields.hasErrors('namaPemilik')}" th:errors="*{namaPemilik}"></span>
+    <label for="alamat">Alamat</label>
+    <input type="text" th:field="*{alamat}" id="alamat" placeholder="Alamat">
+    <span th:if="${#fields.hasErrors('alamat')}" th:errors="*{alamat}"></span>
+    <br>
+    <input type="text" th:field="*{merkKendaraan}" id="merkKendaraan" placeholder="Merk Kendaraan">
+    <span th:if="${#fields.hasErrors('merkKendaraan')}" th:errors="*{merkKendaraan}"></span>
+    <br>
+    <input type="text" th:field="*{tahunPembuatan}" id="tahunPembuatan" placeholder="Tahun Pembuatan">
+    <span th:if="${#fields.hasErrors('tahunPembuatan')}" th:errors="*{tahunPembuatan}"></span>
+    <br>
+    <input type="text" th:field="*{kapasitasSilinder}" id="kapasitasSilinder" placeholder="Kapasitas Silinder">
+    <span th:if="${#fields.hasErrors('kapasitasSilinder')}" th:errors="*{kapasitasSilinder}"></span>
+    <br>
+    <input type="text" th:field="*{warnaKendaraan}" id="warnaKendaraan" placeholder="Warna Kendaraan">
+    <span th:if="${#fields.hasErrors('warnaKendaraan')}" th:errors="*{warnaKendaraan}"></span>
+    <br>
+    <input type="text" th:field="*{bahanBakar}" id="bahanBakar" placeholder="Bahan Bakar">
+    <span th:if="${#fields.hasErrors('bahanBakar')}" th:errors="*{bahanBakar}"></span>
+    <br>
+    <input type="submit" value="Add Data Kendaraan">
+</form>
+<a href="http://localhost:8080/api/index">Back</a>
